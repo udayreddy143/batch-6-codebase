@@ -1,6 +1,13 @@
 package com.jashwin.coreModule.service;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class EmployeeService {
+
+   public  EmployeeService(){
+        System.out.println("this is employee Service ");
+    }
 
     public String display(){
 
