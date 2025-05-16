@@ -7,12 +7,23 @@ import org.springframework.stereotype.Component;
 @Component
 public class EmployeeController {
 
-   public EmployeeController(){
-        System.out.println("employee controller bean");
-    }
+    private EmployeeService employeeService;
+
+//    @Autowired
+//   public EmployeeController(EmployeeService employeeService){
+//       this.employeeService=employeeService;
+//        System.out.println("employee controller bean");
+//    }
 
     @Autowired
-     EmployeeService employeeService;
+    public void setEmployeeService(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
+
+
+//    @Autowired
+//     private  EmployeeService employeeService;
+
    public  String displayMessage(){
 
        // i need to return mesdsage from  service layer

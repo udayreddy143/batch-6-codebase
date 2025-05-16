@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.jashwin.coreModule","uday"} )
+//@ComponentScan(basePackages = {"com.jashwin.coreModule","uday"} )
 public class CoreModuleApplication {
 
 //	@Autowired
