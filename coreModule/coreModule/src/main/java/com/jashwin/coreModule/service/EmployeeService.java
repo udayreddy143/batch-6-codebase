@@ -11,7 +11,7 @@ public class EmployeeService {
 
     public String display(){
 
-        System.out.println("very good demo session by uday");
-        return " hey my name is priyanka  welcome to git branch";
+        System.out.println("very good demo session by soujanya");
+        return " hey my name is sudeeksha  welcome to git branch";
     }
 }
