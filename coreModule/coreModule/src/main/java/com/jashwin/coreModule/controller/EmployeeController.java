@@ -2,23 +2,26 @@ package com.jashwin.coreModule.controller;
 
 import com.jashwin.coreModule.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("empController")
+@Scope("prototype")
 public class EmployeeController {
 
+    @Autowired
     private EmployeeService employeeService;
 
-//    @Autowired
-//   public EmployeeController(EmployeeService employeeService){
-//       this.employeeService=employeeService;
-//        System.out.println("employee controller bean");
-//    }
 
-    @Autowired
-    public void setEmployeeService(EmployeeService employeeService) {
-        this.employeeService = employeeService;
+   public EmployeeController(){
+
+        System.out.println("employee controller bean");
     }
+
+//    @Autowired
+//    public void setEmployeeService(EmployeeService employeeService) {
+//        this.employeeService = employeeService;
+//    }
 
 
 //    @Autowired
