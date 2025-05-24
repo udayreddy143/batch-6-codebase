@@ -1,6 +1,7 @@
 package com.jaswin.springJdbcProgram;
 
-import com.jaswin.springJdbcProgram.repository.CurdOperationsExample;
+import com.jaswin.springJdbcProgram.controller.CurdOperationController;
+import com.jaswin.springJdbcProgram.repository.CurdOperationRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -10,9 +11,11 @@ public class SpringJdbcProgramApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(SpringJdbcProgramApplication.class, args);
-		CurdOperationsExample curdOperationsExample = context.getBean(CurdOperationsExample.class);
+		CurdOperationController curdOperationsExample = context.getBean(CurdOperationController.class);
 
-		curdOperationsExample.saveData();
+		//curdOperationsExample.saveData();
+		curdOperationsExample.deleteData();
+
 	}
 
 }
