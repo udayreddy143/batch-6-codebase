@@ -27,12 +27,12 @@ public class EmployeeController {
 //    @Autowired
 //     private  EmployeeService employeeService;
 
-   public  String displayMessage(){
+    public  String displayMessage(){
 
-       // i need to return mesdsage from  service layer
+        // i need to return mesdsage from  service layer
 
-       //EmployeeService employeeService = new EmployeeService();
-       String response = employeeService.display();
-       return  response;
+        //EmployeeService employeeService = new EmployeeService();
+        String response = employeeService.display();
+        return  response;
     }
 }
