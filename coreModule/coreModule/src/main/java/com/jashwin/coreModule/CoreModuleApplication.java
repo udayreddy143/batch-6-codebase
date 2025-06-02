@@ -1,4 +1,3 @@
-
 package com.jashwin.coreModule;
 
 import com.jashwin.coreModule.controller.EmployeeController;
@@ -11,15 +10,17 @@ import org.springframework.context.annotation.ComponentScan;
 //@ComponentScan(basePackages = {"com.jashwin.coreModule","uday"} )
 public class CoreModuleApplication {
 
-	//	@Autowired
+//	@Autowired
 //	 EmployeeController controller;
 	public static void main(String[] args) {
 
-		System.out.println("apploication startred");
-		ApplicationContext context =  SpringApplication.run(CoreModuleApplication.class, args);  // got the IOC container
+	ApplicationContext context =  SpringApplication.run(CoreModuleApplication.class, args);  // got the IOC container
 
-		System.out.println(" container intailzed");
-		EmployeeController controller = context.getBean(EmployeeController.class);
+	EmployeeController controller = (EmployeeController) context.getBean("empController");
+		EmployeeController controller1 = (EmployeeController) context.getBean("empController");
+
+
+		System.out.println(controller==controller1);
 		System.out.println("learning springboot ");
 
 		//EmployeeController controller= new EmployeeController();
