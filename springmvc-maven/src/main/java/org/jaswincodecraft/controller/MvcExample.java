@@ -51,6 +51,8 @@ public class MvcExample {
     	
     	System.out.println("Emp Json Data"+employee);
     	
+    	System.out.println("Ended postmapping");
+    	
     	return "Sucussfully json data formatted....";
     }
 }
