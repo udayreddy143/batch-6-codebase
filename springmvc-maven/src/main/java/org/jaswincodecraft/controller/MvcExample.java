@@ -51,7 +51,7 @@ public class MvcExample {
     }
 
     @GetMapping("/{age}/{id}/{name}")
-    public String m1(@PathVariable("age") String age, @PathVariable("id") int id, @PathVariable("name") String name){
+    public String m67(@PathVariable("age") String age, @PathVariable("id") int id, @PathVariable("name") String name){
         System.out.println(age+"--->"+name+"--->"+id);
         return "hey this is getMapping" + name;
     }
