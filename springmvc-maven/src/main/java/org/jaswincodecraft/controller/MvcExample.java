@@ -50,7 +50,17 @@ public class MvcExample {
         System.out.println("deletingv name using quey()delete from Student where name="+employeeName);
     }
 
+    @GetMapping("/{age}/{id}/{name}")
+    public String m1(@PathVariable("age") String age, @PathVariable("id") int id, @PathVariable("name") String name){
+        System.out.println(age+"--->"+name+"--->"+id);
+        return "hey this is getMapping" + name;
+    }
 
+    @PostMapping
+    public String m2(@RequestBody Student student){
+        System.out.println(student);
+        return "hey this is  PostMapping";
+    }
     @PutMapping
     public void updateAllDFetails(@RequestBody Employee employee){
 
@@ -65,5 +75,18 @@ public class MvcExample {
     @PatchMapping("/{name}/{id}")
     public void updateEmployeeName(@PathVariable("name") String name,@PathVariable("id") int id) {
         System.out.println(name+"=========="+id);
+    }
+    @DeleteMapping
+    public String m3(){
+        return "hey this is  deleteMapping";
+    }
+
+    @PostMapping
+    @RequestMapping("/emp")
+    public String formJsonData(@RequestBody Employee employee) {
+
+    	System.out.println("Emp Json Data"+employee);
+
+    	return "Sucussfully json data formatted....";
     }
 }
