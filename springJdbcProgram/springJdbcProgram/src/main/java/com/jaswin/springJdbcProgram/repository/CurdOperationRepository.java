@@ -14,10 +14,13 @@ public class CurdOperationRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public void saveData(int id,String name,String address,String language){
+    public void saveData(Employee employee){
+
+
+
         String sql = "insert into employee(id,name,place,language) values(?,?,?,?)";
 
-        jdbcTemplate.update(sql,id,name,address,language);
+        jdbcTemplate.update(sql,employee.getId(),employee.getName(),employee.getPlace(),employee.getLanguage());
         System.out.println("data inserted successfully");
     }
 

@@ -16,7 +16,13 @@ public class CurdOperationController {
     public  void saveData() {
 
 
-        repository.saveData(11,"tharun","a.p","english");
+        Employee employee = new Employee();
+        employee.setId(11);
+        employee.setLanguage("telugu");
+        employee.setName("yogi");
+        employee.setPlace("america");
+
+        repository.saveData(employee);
     }
 
     public  void deleteData() {
