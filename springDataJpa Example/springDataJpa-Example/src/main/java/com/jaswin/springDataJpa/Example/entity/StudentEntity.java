@@ -1,18 +1,20 @@
 package com.jaswin.springDataJpa.Example.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "student")
+@Table(name = "employee_details_batch4")
 public class StudentEntity {
 
 
     ////String sql = "insert into employee(id,name,place,language) values(?,?,?,?)";
     @Id
-    private Long id;
-    private String name;
+    private String id;
+    @Column(name = "name")
+    private String stuName;
     private String place;
     private String language;
 
@@ -26,20 +28,20 @@ public class StudentEntity {
         this.age = age;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getStuName() {
+        return stuName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setStuName(String stuName) {
+        this.stuName = stuName;
     }
 
     public String getPlace() {

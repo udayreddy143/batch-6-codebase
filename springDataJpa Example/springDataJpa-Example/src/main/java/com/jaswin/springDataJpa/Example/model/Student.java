@@ -3,16 +3,16 @@ package com.jaswin.springDataJpa.Example.model;
 public class Student {
 
     ////String sql = "insert into employee(id,name,place,language) values(?,?,?,?)";
-    private int id;
+    private String id;
     private String name;
     private String place;
     private String language;
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
