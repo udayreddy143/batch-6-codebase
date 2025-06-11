@@ -5,8 +5,11 @@ import com.jaswin.springDataJpa.Example.model.Student;
 import com.jaswin.springDataJpa.Example.repository.StudentRepository;
 import com.jaswin.springDataJpa.Example.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -20,9 +23,26 @@ public class StudentController {
     public void saveData(@RequestBody  Student student){
 
         studentService.saveData(student);
-
-
-
-
     }
+
+    @GetMapping
+    public StudentEntity getDetails(@RequestParam("id") int id){
+
+        StudentEntity entity = studentService.getDetails(id);
+        return entity;
+    }
+
+    @DeleteMapping
+    public void deleteByEmpId(@RequestParam("id") int id) {
+        studentService.deleteById(id);
+    }
+
+    //update request
+    //1. first get all data
+    //2. repository findByName
+    //3. chcek object contains data or not
+    // if data not there  donrt fupdate
+    // if data exist then map model to exiusting entity
+    // save again same entity
+
 }

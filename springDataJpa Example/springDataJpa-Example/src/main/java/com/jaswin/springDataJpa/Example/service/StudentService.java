@@ -6,6 +6,8 @@ import com.jaswin.springDataJpa.Example.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class StudentService {
 
@@ -21,4 +23,23 @@ public class StudentService {
         entity.setStuName(student.getName());
         studentRepository.save(entity);
     }
+
+
+    public StudentEntity getDetails(int id){
+
+        Optional<StudentEntity> optionalStudentEntity =studentRepository.findById(String.valueOf(id));
+
+        if(optionalStudentEntity.isPresent()){
+            StudentEntity entity = optionalStudentEntity.get();
+            return entity;
+        }else{
+            return null;
+        }
+    }
+
+    public void deleteById(int id){
+
+        studentRepository.deleteById(String.valueOf(id));
+    }
+
 }
