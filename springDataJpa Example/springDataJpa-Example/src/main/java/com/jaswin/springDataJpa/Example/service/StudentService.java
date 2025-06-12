@@ -5,7 +5,9 @@ import com.jaswin.springDataJpa.Example.model.Student;
 import com.jaswin.springDataJpa.Example.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -40,6 +42,20 @@ public class StudentService {
     public void deleteById(int id){
 
         studentRepository.deleteById(String.valueOf(id));
+    }
+    public StudentEntity updateByName(Student student){
+        StudentEntity studentData= studentRepository.findByStuName(student.getName());
+        if(studentData != null){
+            studentData.setId(student.getId());
+
+            studentData.setPlace(student.getPlace());
+            studentData.setLanguage(student.getLanguage());
+            return studentRepository.save(studentData);
+        }
+        else{
+            return null;
+        }
+
     }
 
 }

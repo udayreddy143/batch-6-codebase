@@ -5,12 +5,7 @@ import com.jaswin.springDataJpa.Example.model.Student;
 import com.jaswin.springDataJpa.Example.repository.StudentRepository;
 import com.jaswin.springDataJpa.Example.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class StudentController {
@@ -35,6 +30,11 @@ public class StudentController {
     @DeleteMapping
     public void deleteByEmpId(@RequestParam("id") int id) {
         studentService.deleteById(id);
+    }
+
+    @PutMapping("/update")
+    public void updateByName(@RequestBody  Student student){
+        studentService.updateByName(student);
     }
 
     //update request
